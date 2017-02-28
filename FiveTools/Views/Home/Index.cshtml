@@ -1,0 +1,94 @@
+﻿
+
+<div class="column show-for-medium medium-3 playerOnePanel">
+    <select data-bind="options: allBatters, optionsText: 'Name', value: playerOne"></select>
+
+    <!-- ko if: playerOne -->
+    <table data-bind="template: { name: 'batterTemplate', data: playerOne }"></table>
+    <!-- /ko -->
+</div>
+<div class="column small-12 medium-6" id="chart">
+    <canvas id="myChart" width="400" height="400"></canvas>
+    @*TO DO Maps stats used to draw graph*@
+    @*@Html.Partial("_Mappings")*@
+
+
+</div>
+<div class="column show-for-medium medium-3 playerTwoPanel">
+    <select data-bind="options: allBatters, optionsText: 'Name', value: playerTwo"></select>
+
+    <!-- ko if: playerTwo -->
+    <table data-bind="template: { name: 'batterTemplate', data: playerTwo }"></table>
+    <!-- /ko -->
+</div>
+<div class="column small-12">
+    <table>
+        <tr>
+            <td>Games</td>
+            @*<td data-bind="text:playerOne().G()"></td>*@
+        </tr>
+    </table>
+</div>
+<script type="text/html" id="batterTemplate">
+    <tr>
+        <td>Games</td>
+        <td data-bind="text:G"></td>
+    </tr>
+    <tr>
+        <td>Plate Appearances</td>
+        <td data-bind="text:PA"></td>
+    </tr>
+    <tr>
+        <td>At Bats</td>
+        <td data-bind="text:AVG"></td>
+    </tr>
+    <tr>
+        <td>Runs</td>
+        <td data-bind="text:R"></td>
+    </tr>
+    <tr>
+        <td>Hits</td>
+        <td data-bind="text:AVG"></td>
+    </tr>
+    <tr>
+        <td>Doubles</td>
+        <td data-bind="text:AVG"></td>
+    </tr>
+    <tr>
+        <td>Triples</td>
+        <td data-bind="text:AVG"></td>
+    </tr>
+    <tr>
+        <td>Home Runs</td>
+        <td data-bind="text:HR"></td>
+    </tr>
+    <tr>
+        <td>Runs Batted In</td>
+        <td data-bind="text:RBI"></td>
+    </tr>
+    <tr>
+        <td>Stolen Bases</td>
+        <td data-bind="text:SB"></td>
+    </tr>
+    <tr>
+        <td>Caught Stealing</td>
+        <td data-bind="text:AVG"></td>
+    </tr>
+    <tr>
+        <td>Walks</td>
+        <td data-bind="text:AVG"></td>
+    </tr>
+    <tr>
+        <td>Strikeouts</td>
+        <td data-bind="text:AVG"></td>
+    </tr>
+    <tr>
+        <td>Average</td>
+        <td data-bind="text:AVG"></td>
+    </tr>
+
+    <tr>
+        <td>On Base Percentage</td>
+        <td data-bind="text:AVG"></td>
+    </tr>
+</script>

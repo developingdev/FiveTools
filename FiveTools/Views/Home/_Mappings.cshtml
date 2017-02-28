@@ -1,0 +1,29 @@
+﻿
+<div class="row">
+    <div class="column small-1">
+
+    </div>
+    <div class="column small-6">
+        Label
+    </div>
+    <div class="column small-5">
+        Maps To
+    </div>
+</div>
+<!-- ko template: { name: 'mappingRowTemplate', foreach: allMappings } -->
+
+<!-- /ko -->
+
+<script type="text/html" id="mappingRowTemplate">
+    <div class="row">
+        <div class="column small-1">
+            <input id="checkbox1" type="checkbox">
+        </div>
+        <div class="column small-6">
+            <input type="text" data-bind="value: label" />
+        </div>
+        <div class="column small-5">
+            <select data-bind="options: $root.availableStatMappings, value: mapsTo"></select>
+        </div>
+    </div>
+</script>
